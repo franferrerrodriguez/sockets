@@ -9,10 +9,14 @@ router.get('/messages', (req: Request, res: Response) => {
     });
 });
 
-router.post('/messages', (req: Request, res: Response) => {
+router.post('/messages/:id', (req: Request, res: Response) => {
+    console.log(req.params);
+    console.log(req.body);
+
     res.json({
         ok: true,
-        message: 'POST OK'
+        message: 'POST OK',
+        body: req.body
     });
 });
 
